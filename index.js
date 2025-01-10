@@ -1,6 +1,6 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
-
+const cors = require('cors');
 const app = express();
 const port = 5001;
 
@@ -11,6 +11,7 @@ const dbName = "youtube";
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 let db, users, videos, comments, playlists, subscriptions; // Added subscriptions collection
 
